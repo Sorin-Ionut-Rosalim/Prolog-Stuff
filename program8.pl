@@ -34,7 +34,7 @@ siblings(X, Y) :-
 % ancestor(A,X) if A is ancestor of X
 ancestor(X, Y) :- % base case
     parent(X, Y).
-ancestor(X, Y) :- % recursive case
+ancestor(X, Y) :- % recursive case, be aware not to make left recursive calls -> infinit loop
     parent(Z, Y),
     ancestor(X, Z). % X is an ancestor of my parent Z
 
